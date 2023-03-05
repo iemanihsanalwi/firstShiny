@@ -1,0 +1,1 @@
+iris <- read.csv("D:\\RStudio\\lab 5_ds\\Iris.csv")

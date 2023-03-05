@@ -39,3 +39,5 @@ server <- function(input, output) {
     head(datasetInput(), n = input$obs)
   })
 }
+
+shinyApp(ui = ui, server = server)

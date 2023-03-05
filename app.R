@@ -1,5 +1,7 @@
-library(shiny)
+# Load the iris dataset
+iris <- read.csv("D:\\RStudio\\lab 5_ds\\Iris.csv")
 
+# Define the UI
 ui <- fluidPage(
   titlePanel("Shiny Text"),
   sidebarLayout(
@@ -20,14 +22,14 @@ ui <- fluidPage(
   )
 )
 
+# Define the server
 server <- function(input, output) {
   datasetInput <- reactive({
     switch (input$dataset,
             "rock" = rock,
             "pressure" = pressure,
             "cars" = cars,
-            "iris" = iris
-    )
+            "iris" = iris)
   })
   
   output$summary <- renderPrint({
@@ -40,4 +42,5 @@ server <- function(input, output) {
   })
 }
 
+# Run the app
 shinyApp(ui = ui, server = server)
